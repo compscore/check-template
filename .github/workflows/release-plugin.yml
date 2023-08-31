@@ -24,7 +24,7 @@ jobs:
 
     - name: Create Release
       id: create_release
-      uses: actions/create-release@v1.1.4
+      uses: ncipollo/release-action@v1.13.0
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       with:
@@ -32,13 +32,4 @@ jobs:
         release_name: Release ${{ github.ref_name }}
         draft: false
         prerelease: false
-
-    - name: Upload Plugin to Release
-      uses: actions/upload-release-asset@v1
-      env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      with:
-        upload_url: ${{ steps.create_release.outputs.upload_url }}
-        asset_path: ./check.so
-        asset_name: check.so
-        asset_content_type: application/octet-stream
+        artifacts: "check.so"
