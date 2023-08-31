@@ -32,4 +32,4 @@ jobs:
         name: Release ${{ github.ref_name }}
         draft: false
         prerelease: false
-        artifacts: "check.so"
+        artifacts: "*.so"
