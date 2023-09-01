@@ -5,5 +5,5 @@ import (
 )
 
 func Run(ctx context.Context, target string, command string, expectedOutput string, username string, password string) (bool, string) {
-	return true, "Successfully completed"
+	return true, ""
 }
