@@ -1,4 +1,4 @@
-package main
+package check-template
 
 import (
 	"context"
